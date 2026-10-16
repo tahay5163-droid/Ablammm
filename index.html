@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>İyi ki doğdun Elif ablam 🫶</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=Caveat:wght@600&display=swap">
+<style>
+:root{--night:#080c26;--navy:#16205a;--canary:#ffd21f;--rose:#ff5a7a;--ink:#fff7dc;--mute:#b9bfe0;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--night);color:var(--ink);font-family:'Bricolage Grotesque',system-ui,-apple-system,'Segoe UI',sans-serif;line-height:1.55;overflow-x:hidden}
+body.lock{overflow:hidden;height:100svh}
+.hand{font-family:'Caveat','Bradley Hand',cursive;font-weight:600}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--canary);outline-offset:3px}
+section{padding:80px 20px;max-width:1100px;margin:0 auto}
+h2{font-size:clamp(32px,7vw,56px);line-height:1;margin:0 0 12px;font-weight:800;letter-spacing:-.03em}
+.sub{color:var(--mute);margin:0 0 34px;max-width:50ch;font-size:18px}
+.btn{background:var(--canary);color:var(--night);border:0;border-radius:999px;padding:15px 30px;font-weight:800;font-size:17px;box-shadow:5px 5px 0 var(--rose);transition:transform .15s,box-shadow .15s}
+.btn:active{transform:translate(4px,4px);box-shadow:1px 1px 0 var(--rose)}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:200}
+
+/* intro */
+#intro{position:fixed;inset:0;z-index:100;background:radial-gradient(circle at 50% 40%,#1d2a7a,var(--night) 70%);display:grid;place-content:center;justify-items:center;text-align:center;gap:18px;padding:24px;transition:opacity .8s,visibility .8s}
+#intro.off{opacity:0;visibility:hidden}
+#intro h1{font-size:clamp(30px,8vw,54px);margin:0;line-height:1;font-weight:800;letter-spacing:-.03em}
+.gift{font-size:110px;line-height:1;animation:wob 1.6s ease-in-out infinite;filter:drop-shadow(0 12px 30px rgba(255,90,122,.5))}
+#intro.off .gift{animation:none;transform:scale(2.4);opacity:0;transition:.6s}
+@keyframes wob{0%,100%{transform:rotate(-6deg) scale(1)}50%{transform:rotate(6deg) scale(1.08)}}
+
+/* hero */
+.hero{position:relative;height:100svh;min-height:560px;overflow:hidden;display:flex;align-items:flex-end}
+.hero img{position:absolute;inset:-6% 0;width:100%;height:112%;object-fit:cover;object-position:50% 20%;will-change:transform}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,12,38,.35) 0%,rgba(8,12,38,.15) 35%,rgba(8,12,38,.95) 100%)}
+.hero-in{position:relative;z-index:2;padding:0 22px 64px;max-width:1100px;margin:0 auto;width:100%}
+.hero h1{margin:0 0 14px;font-size:clamp(54px,15vw,150px);line-height:.88;font-weight:800;letter-spacing:-.045em}
+.hero h1 b{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 b span{display:block;transform:translateY(110%)}
+.go .hero h1 b span{animation:up 1s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:var(--d)}
+.hero h1 b:last-child{color:var(--canary)}
+@keyframes up{to{transform:none}}
+#type{font-size:clamp(26px,5vw,40px);min-height:1.3em;margin:0 0 22px}
+.cue{position:absolute;z-index:2;left:50%;bottom:16px;transform:translateX(-50%);font-size:26px;animation:wob 2s infinite}
+
+/* marquee */
+.mq{background:var(--canary);color:var(--night);overflow:hidden;white-space:nowrap;font-weight:800;font-size:22px;transform:rotate(-1.5deg);margin:-8px -10px 0;padding:12px 0;position:relative;z-index:3}
+.mq div{display:inline-block;animation:mq 28s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* gallery */
+.row{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:20px 20px 34px;margin:0 -20px;perspective:1000px}
+.card{flex:0 0 min(78vw,330px);scroll-snap-align:center;position:relative;border:0;padding:0;border-radius:22px;overflow:hidden;aspect-ratio:4/5;background:var(--navy);box-shadow:0 22px 50px rgba(0,0,0,.55);transform:rotateX(var(--rx,0)) rotateY(var(--ry,0));transition:transform .15s}
+.card img{width:100%;height:100%;object-fit:cover;display:block}
+.card span{position:absolute;left:0;right:0;bottom:0;padding:50px 16px 14px;font-size:30px;line-height:1;text-align:left;background:linear-gradient(transparent,rgba(8,12,38,.92))}
+
+/* balloon sky */
+.sky{position:relative;height:420px;border-radius:28px;overflow:hidden;background:linear-gradient(180deg,#1b2b8a,#0e1650 60%,#080c26);border:2px solid var(--navy)}
+.bl{position:absolute;bottom:-20px;width:74px;height:92px;border:0;border-radius:50% 50% 48% 48%;background:var(--c);box-shadow:inset -10px -10px 0 rgba(0,0,0,.14),inset 8px 8px 0 rgba(255,255,255,.28);animation:bob var(--t) ease-in-out infinite alternate;animation-delay:var(--dl);transition:transform .25s,opacity .25s;font-size:26px}
+.bl::after{content:"";position:absolute;left:50%;top:100%;width:2px;height:80px;background:rgba(255,247,220,.5)}
+.bl.pop{transform:scale(1.7);opacity:0;pointer-events:none;animation:none}
+@keyframes bob{from{transform:translateY(-10px) rotate(-4deg)}to{transform:translateY(-150px) rotate(4deg)}}
+.skybar{display:flex;justify-content:space-between;align-items:center;margin-top:14px;color:var(--mute)}
+.skybar button{background:none;border:2px solid var(--navy);border-radius:999px;padding:6px 16px}
+
+/* notes */
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:22px}
+.note{padding:22px 18px;color:#1a1a3a;font-size:27px;line-height:1.15;box-shadow:0 12px 22px rgba(0,0,0,.4);transform:rotate(var(--r));background:var(--b);border-radius:3px}
+
+/* gifts */
+.gifts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gb{aspect-ratio:1;border:0;border-radius:20px;background:var(--navy);font-size:clamp(46px,12vw,80px);display:grid;place-content:center;transition:transform .2s,background .2s}
+.gb:hover{transform:translateY(-6px) rotate(-3deg);background:#1f2c78}
+.gb.seen{opacity:.55}
+
+/* cake */
+.cake{text-align:center}
+.cake svg{width:min(260px,70vw);height:auto;overflow:visible}
+.flame{transform-origin:50% 100%;animation:fl .7s ease-in-out infinite alternate;transition:opacity .4s}
+.out .flame{opacity:0;animation:none}
+@keyframes fl{to{transform:scale(1.15,.9) rotate(3deg)}}
+#wish{min-height:1.4em;font-size:32px;margin:14px 0 18px;color:var(--canary)}
+
+/* dialog */
+dialog{border:3px solid var(--canary);border-radius:24px;background:var(--navy);color:var(--ink);padding:0;width:min(92vw,470px);max-height:88svh;overflow:auto;box-shadow:10px 10px 0 var(--rose)}
+dialog[open]{animation:pop .25s ease-out}
+dialog::backdrop{background:rgba(5,8,28,.82);backdrop-filter:blur(6px)}
+@keyframes pop{from{transform:scale(.9);opacity:0}}
+#dc{padding:28px 24px 24px}
+#dc h3{margin:0 0 8px;font-size:30px;line-height:1.1}
+#dc p{margin:0 0 12px}
+#dc img{width:100%;border-radius:14px;display:block;margin-bottom:14px;max-height:56svh;object-fit:cover}
+.x{position:absolute;right:12px;top:12px;width:38px;height:38px;border-radius:50%;border:0;background:var(--night);z-index:2}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:12px;color:var(--mute)}
+.nav button{background:var(--night);border:2px solid var(--canary);border-radius:999px;padding:8px 16px}
+.letter{font-size:17px;line-height:1.7}
+.coupon{border:2px dashed var(--canary);border-radius:16px;padding:18px;text-align:center;background:rgba(255,210,31,.08)}
+.coupon .hand{font-size:34px;color:var(--canary);line-height:1.1}
+#mus{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;width:52px;height:52px;border-radius:50%;border:0;background:var(--canary);color:var(--night);font-size:22px;box-shadow:4px 4px 0 var(--rose)}
+footer{text-align:center;padding:60px 20px 100px;color:var(--mute)}
+footer b{display:block;font-size:40px;color:var(--ink);margin-bottom:6px}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(1.5px 1.5px at 12% 22%,#fff,transparent),radial-gradient(1.5px 1.5px at 78% 12%,#fff,transparent),radial-gradient(2px 2px at 44% 64%,#ffd21f,transparent),radial-gradient(1.5px 1.5px at 90% 70%,#fff,transparent),radial-gradient(1.5px 1.5px at 28% 88%,#fff,transparent),radial-gradient(2px 2px at 62% 36%,#ff8fa6,transparent);animation:tw 4s ease-in-out infinite alternate}
+@keyframes tw{from{opacity:.35}to{opacity:1}}
+section{position:relative}
+section::before{content:"";position:absolute;inset:6% -10%;z-index:-1;background:radial-gradient(closest-side,rgba(255,90,122,.12),transparent)}
+section:nth-of-type(even)::before{background:radial-gradient(closest-side,rgba(255,210,31,.09),transparent)}
+h2::after{content:"";display:block;width:84px;height:6px;border-radius:6px;background:linear-gradient(90deg,var(--canary),var(--rose));margin-top:14px}
+.cake h2::after,.fin h2::after{margin-inline:auto}
+#pg{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;height:4px;background:linear-gradient(90deg,var(--canary),var(--rose));transform-origin:0 50%;transform:scaleX(0);z-index:150}
+.go .hero h1 b:last-child span{background:linear-gradient(90deg,#ffd21f,#fff7dc,#ff5a7a,#ffd21f);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:up 1s cubic-bezier(.2,.8,.2,1) .4s forwards,sh 6s linear 1.4s infinite}
+@keyframes sh{to{background-position:300% 0}}
+.card{border:1px solid rgba(255,247,220,.3)}
+.card::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.28) 50%,transparent 60%);transform:translateX(-120%);transition:transform .7s;pointer-events:none}
+.card:hover::after{transform:translateX(120%)}
+.bl{z-index:2}
+.sky::before{content:"";position:absolute;top:22px;right:28px;width:54px;height:54px;border-radius:50%;background:#fff7dc;box-shadow:0 0 40px 12px rgba(255,247,220,.35),inset -12px -4px 0 rgba(22,32,90,.18)}
+.sky::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(1.5px 1.5px at 15% 20%,#fff,transparent),radial-gradient(1.5px 1.5px at 40% 12%,#fff,transparent),radial-gradient(2px 2px at 70% 30%,#ffd21f,transparent),radial-gradient(1.5px 1.5px at 30% 50%,#fff,transparent),radial-gradient(1.5px 1.5px at 88% 58%,#fff,transparent);animation:tw 3s ease-in-out infinite alternate}
+.note{position:relative}
+.note::before{content:"";position:absolute;top:-10px;left:50%;width:64px;height:20px;background:rgba(255,255,255,.4);transform:translateX(-50%) rotate(-3deg)}
+.gb{border:2px solid rgba(255,210,31,.35);background:linear-gradient(145deg,#1f2c78,#16205a)}
+.fin{text-align:center}
+.fin img{width:min(100%,400px);aspect-ratio:4/5;object-fit:cover;border-radius:999px 999px 28px 28px;border:3px solid var(--canary);box-shadow:12px 12px 0 var(--rose);transform:rotate(-2deg)}
+.fin h2{margin-top:34px}
+.fin .sub{margin-inline:auto}
+.fin .btn{margin:8px 6px}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+.hrt{position:fixed;bottom:-50px;font-size:var(--s);animation:rise var(--d) ease-in forwards;z-index:150;pointer-events:none}
+@keyframes rise{to{transform:translateY(-115vh) rotate(25deg)}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.hero h1 b span{transform:none}}
+</style>
+</head>
+<body class="lock">
+<canvas id="fx" aria-hidden="true"></canvas>
+<i id="pg" aria-hidden="true"></i>
+
+<div id="intro">
+  <div class="gift">🎁</div>
+  <h1>Elif ablam,<br>senin için bir şey var</h1>
+  <button class="btn" id="unwrap">Hediyeyi aç</button>
+</div>
+
+<header class="hero">
+  <img id="heroImg" alt="Elif, Boğaz Köprüsü önünde siyah elbiseyle">
+  <div class="hero-in">
+    <h1><b style="--d:.1s"><span>İyi ki</span></b><b style="--d:.25s"><span>doğdun</span></b><b style="--d:.4s"><span>Elif ablam</span></b></h1>
+    <p id="type" class="hand" aria-live="polite"></p>
+    <button class="btn" id="letterBtn">Mektubu oku 💌</button>
+  </div>
+  <div class="cue" aria-hidden="true">⌄</div>
+</header>
+
+<div class="mq" aria-hidden="true"><div id="mqt"></div></div>
+
+<section id="kareler">
+  <h2>Senin kareler</h2>
+  <p class="sub">Kaydır, dokun. Her fotoğrafın arkasında bir not var.</p>
+  <div class="row" id="row"></div>
+</section>
+
+<section id="balonlar">
+  <h2>Balonları patlat</h2>
+  <p class="sub">Her balonun içinde bir dilek var. Hepsini bulabilecek misin?</p>
+  <div class="sky" id="sky"></div>
+  <div class="skybar"><span id="cnt">0 / 8 dilek</span><button id="again">Yeniden şişir</button></div>
+</section>
+
+<section id="notlar">
+  <h2>Sana notlar</h2>
+  <p class="sub">Duvara yapıştırdık, okumak sana kaldı.</p>
+  <div class="notes" id="notes"></div>
+</section>
+
+<section id="hediyeler">
+  <h2>Üç hediye kutusu</h2>
+  <p class="sub">Birini seç. İstersen üçünü de aç, kimse bakmıyor.</p>
+  <div class="gifts" id="gifts"></div>
+</section>
+
+<section class="cake" id="mum">
+  <h2>Mumu üfle, dileğini tut</h2>
+  <svg viewBox="0 0 200 190" id="cakeSvg" role="img" aria-label="Mumlu pasta">
+    <g class="flame"><path d="M100 18c14 18 10 30 0 36-10-6-14-18 0-36z" fill="#ffd21f"/><path d="M100 32c6 9 5 15 0 18-5-3-6-9 0-18z" fill="#ff5a7a"/></g>
+    <rect x="96" y="52" width="8" height="34" rx="3" fill="#fff7dc"/>
+    <rect x="30" y="86" width="140" height="42" rx="10" fill="#ff5a7a"/>
+    <path d="M30 100q14 14 28 0t28 0 28 0 28 0 28 0v-6H30z" fill="#fff7dc"/>
+    <rect x="14" y="128" width="172" height="46" rx="12" fill="#ffd21f"/>
+    <path d="M14 144q14 14 28 0t28 0 28 0 28 0 28 0 28 0v-6H14z" fill="#16205a"/>
+  </svg>
+  <div id="wish" class="hand" aria-live="polite"></div>
+  <button class="btn" id="blow">Mumu üfle 💨</button>
+</section>
+
+<section class="fin">
+  <img id="finImg" alt="Elif, sarı formasıyla stadyumda">
+  <h2>Yeni yaşında hep böyle gül</h2>
+  <p class="sub">Seni çok seviyoruz. Sayfa burada bitiyor ama kutlama bitmiyor.</p>
+  <button class="btn" id="hr">Kalp yağmuru 💛</button>
+  <button class="btn" id="top">Başa dön ↑</button>
+</section>
+<footer>
+  <b class="hand">Doğum günün kutlu olsun!</b>
+  Sevgiyle, sana en çok hayran olan kardeşinden 🫶
+</footer>
+
+<button id="mus" aria-label="Müziği aç veya kapat" aria-pressed="false">🎵</button>
+<dialog id="dlg"><button class="x" aria-label="Kapat">✕</button><div id="dc"></div></dialog>
+
+<script>
+const P=[
+{s:"foto1.jpg",t:"Gece mavisi",n:"Siyahlar içinde, Boğaz'ın karşısında bir yıldız gibi."},
+{s:"foto2.jpg",t:"Köprü ışıkları",n:"Boğaz'ın ışıkları bile bu karede sana eşlik ediyor."},
+{s:"foto3.jpg",t:"Tribün şıklığı",n:"Maç da sen, stil de sen. Kombin ödülü yine sende."},
+{s:"foto4.jpg",t:"Poz makinesi",n:"Kamerayı görünce ışıklar kendiliğinden açılıyor."},
+{s:"foto5.jpg",t:"Ayna karşısı",n:"Sarı forma, lacivert etek ve sınırsız özgüven."}
+];
+const W=["Sağlık dolu bir yıl olsun.","Kahkahan hiç eksik olmasın.","Hedeflediğin her kapı aralık dursun.","Çevrende hep seni seven insanlar olsun.","Yeni şehirler, yeni köprüler, yeni kareler seni bekliyor.","Hayatta da tribünde de gol sevinci bol olsun!","Gönlünden geçen her şey bu yıl gerçek olsun.","Hep böyle parla, hep böyle kal."];
+const N=[
+["Her karede biraz daha parlıyorsun.","#ffd21f",-3],["Odaya girdiğinde hava değişiyor.","#fff7dc",2],["Stil sende, biz sadece hayranız.","#ff8fa6",-1.5],["İyi günde kötü günde hep yanımızdasın.","#9fb0ff",3],["Enerjin bulaşıcı, kaçış yok.","#ffd21f",-2],["Sen ablamsın, daha ne olsun.","#fff7dc",1.5]];
+const G=[["🎬","Film gecesi kuponu","Patlamış mısır benden, film seçimi sende. Sadece 'bir daha izleyelim' demek yok."],["☕","Kahve kuponu","İstediğin zaman, istediğin yerde bir kahve borcum var."],["🛍️","Alışveriş günü","Bir gün boyunca çanta taşıma görevi bende. İtiraz yok."]];
+const $=s=>document.querySelector(s),dlg=$('#dlg'),dc=$('#dc'),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+$('#heroImg').src=P[0].s;
+$('#mqt').textContent=('Doğum günün kutlu olsun ✦ Elif ablam ✦ İyi ki doğdun 🎂 ✦ ').repeat(8);
+$('#row').innerHTML=P.map((p,i)=>`<button class="card" data-i="${i}"><img src="${p.s}" alt="${p.t}" loading="lazy"><span class="hand">${p.t}</span></button>`).join('');
+$('#notes').innerHTML=N.map(n=>`<div class="note hand" style="--b:${n[1]};--r:${n[2]}deg">${n[0]}</div>`).join('');
+$('#gifts').innerHTML=G.map((g,i)=>`<button class="gb" data-g="${i}" aria-label="Hediye ${i+1}">${g[0]}</button>`).join('');
+
+function show(h){dc.innerHTML=h;if(!dlg.open)dlg.showModal()}
+let cur=0;
+function lb(i){cur=(i+P.length)%P.length;const p=P[cur];show(`<img src="${p.s}" alt="${p.t}"><h3 class="hand">${p.t}</h3><p>${p.n}</p><div class="nav"><button data-d="-1" aria-label="Önceki">‹</button><span>${cur+1} / ${P.length}</span><button data-d="1" aria-label="Sonraki">›</button></div>`)}
+const letter=()=>{boom(120);hearts();show(`<h3 class="hand">Elif ablam,</h3><p class="letter">Bir yaş daha almış olman seni hiç eskitmiyor, her karede biraz daha parlıyorsun. Boğaz'ın ışıkları kadar göz alıcı, tribün kadar neşelisin. Yanında olmak kalabalıkta bile evde gibi hissettiriyor.<br><br>Yeni yaşın sana sağlık, bol kahkaha ve gönlünden geçen her şeyi getirsin.<br><br>İyi ki varsın, iyi ki ablamsın. 🫶</p>`)};
+$('#letterBtn').onclick=letter;
+
+document.addEventListener('click',e=>{
+  const c=e.target.closest('.card');if(c)return lb(+c.dataset.i);
+  const n=e.target.closest('[data-d]');if(n)return lb(cur+ +n.dataset.d);
+  const g=e.target.closest('.gb');if(g){const k=G[+g.dataset.g];g.classList.add('seen');boom(70,g.getBoundingClientRect());return show(`<div class="coupon"><div style="font-size:64px">${k[0]}</div><div class="hand">${k[1]}</div><p style="margin:6px 0 0">${k[2]}</p></div>`)}
+});
+dlg.addEventListener('click',e=>{if(e.target===dlg||e.target.classList.contains('x'))dlg.close()});
+addEventListener('keydown',e=>{if(!dlg.open||!dc.querySelector('[data-d]'))return;if(e.key==='ArrowRight')lb(cur+1);if(e.key==='ArrowLeft')lb(cur-1)});
+let tx=0;dlg.addEventListener('touchstart',e=>tx=e.touches[0].clientX,{passive:true});
+dlg.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-tx;if(dc.querySelector('[data-d]')&&Math.abs(d)>50)lb(cur+(d<0?1:-1))});
+
+/* 3D tilt */
+$('#row').addEventListener('pointermove',e=>{const c=e.target.closest('.card');if(!c||e.pointerType!=='mouse')return;const r=c.getBoundingClientRect();c.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*14+'deg');c.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*14+'deg')});
+$('#row').addEventListener('pointerout',e=>{const c=e.target.closest('.card');if(c){c.style.setProperty('--rx','0deg');c.style.setProperty('--ry','0deg')}});
+
+/* balloons */
+const cols=['#ffd21f','#ff5a7a','#fff7dc','#7c8cff'];let popped=0;
+function fill(){popped=0;$('#cnt').textContent='0 / 8 dilek';$('#sky').innerHTML=W.map((w,i)=>`<button class="bl" data-b="${i}" aria-label="Balon ${i+1}" style="--c:${cols[i%4]};left:${4+i*11.8}%;bottom:${30+(i%3)*95}px;--t:${3+(i*.37)%2}s;--dl:-${(i*.7)%3}s">🎈</button>`).join('').replace(/🎈/g,'')}
+fill();$('#again').onclick=fill;
+$('#sky').addEventListener('click',e=>{const b=e.target.closest('.bl');if(!b||b.classList.contains('pop'))return;
+  b.classList.add('pop');boom(50,b.getBoundingClientRect());popped++;$('#cnt').textContent=popped+' / 8 dilek';
+  show(popped===8?`<h3 class="hand">Hepsini buldun! 🎉</h3><p class="letter">${W[+b.dataset.b]}<br><br>Sekiz dileğin hepsi sana. İyi ki doğdun Elif ablam!</p>`:`<h3 class="hand">Dilek ${popped}</h3><p class="letter">${W[+b.dataset.b]}</p>`);if(popped===8)setTimeout(()=>boom(220),300)});
+
+/* cake */
+$('#blow').onclick=()=>{const out=$('#cakeSvg').classList.toggle('out');$('#wish').textContent=out?'Dileğini tut, kimseye söyleme 🤫':'';$('#blow').textContent=out?'Tekrar yak 🕯️':'Mumu üfle 💨';if(out)boom(130,$('#blow').getBoundingClientRect())};
+
+/* intro, typewriter, parallax */
+$('#unwrap').onclick=()=>{$('#intro').classList.add('off');document.body.classList.remove('lock');document.body.classList.add('go');boom(220);
+  const t='Bugün dünyanın en güzel günü, çünkü sen doğdun.';let i=0;const id=setInterval(()=>{$('#type').textContent=t.slice(0,++i);if(i>=t.length)clearInterval(id)},reduce?1:55)};
+if(!reduce)addEventListener('scroll',()=>{const y=scrollY;if(y<innerHeight*1.2)$('#heroImg').style.transform=`translateY(${y*.25}px)`},{passive:true});
+
+/* music: Happy Birthday via WebAudio */
+let ac,on=false,tm=[];
+const F={G:392,A:440,B:494,C:523,D:587,E:659,F:698,H:784},S="G.75 G.25 A1 G1 C1 B2 G.75 G.25 A1 G1 D1 C2 G.75 G.25 H1 E1 C1 B1 A1 F.75 F.25 E1 C1 D1 C2".split(' ');
+function play(){ac=ac||new (window.AudioContext||window.webkitAudioContext)();let t=ac.currentTime+.1;const bp=.42;
+  S.forEach(s=>{const f=F[s[0]],d=parseFloat(s.slice(1))*bp,o=ac.createOscillator(),g=ac.createGain();o.type='triangle';o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.18,t+.03);g.gain.exponentialRampToValueAtTime(.001,t+d*.95);o.connect(g).connect(ac.destination);o.start(t);o.stop(t+d);tm.push(o);t+=d});
+  tm.push({stop(){}});setTimeout(()=>{if(on)stopM()},(t-ac.currentTime)*1000)}
+function stopM(){on=false;tm.forEach(o=>{try{o.stop()}catch(e){}});tm=[];$('#mus').setAttribute('aria-pressed','false');$('#mus').textContent='🎵'}
+$('#mus').onclick=()=>{if(on)return stopM();on=true;$('#mus').setAttribute('aria-pressed','true');$('#mus').textContent='⏸';play()};
+
+/* hearts, reveal, progress */
+function hearts(){if(reduce)return;for(let i=0;i<36;i++){const s=document.createElement('span');s.className='hrt';s.textContent=['💛','💙','🫶','✨'][i%4];s.style.cssText=`left:${Math.random()*100}%;--s:${20+Math.random()*28}px;--d:${3+Math.random()*3}s;animation-delay:${Math.random()}s`;document.body.append(s);setTimeout(()=>s.remove(),7500)}}
+$('#finImg').src=P[2].s;
+$('#hr').onclick=()=>{hearts();boom(100,$('#hr').getBoundingClientRect())};
+$('#top').onclick=()=>scrollTo({top:0});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('section>*').forEach(el=>{el.classList.add('rv');io.observe(el)});
+addEventListener('scroll',()=>{$('#pg').style.transform=`scaleX(${Math.min(1,scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight))})`},{passive:true});
+
+/* confetti */
+const cv=$('#fx'),cx=cv.getContext('2d');let parts=[],raf=0;
+function size(){cv.width=innerWidth*devicePixelRatio;cv.height=innerHeight*devicePixelRatio}
+size();addEventListener('resize',size);
+function boom(n,r){if(reduce)return;const x=r?r.left+r.width/2:innerWidth/2,y=r?r.top+r.height/2:innerHeight/3;
+  for(let i=0;i<n;i++){const a=Math.random()*6.283,v=4+Math.random()*9;parts.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-6,w:6+Math.random()*7,h:3+Math.random()*5,c:cols[i%4],r:Math.random()*6,vr:Math.random()*.4-.2,l:150})}
+  if(!raf)raf=requestAnimationFrame(tick)}
+function tick(){const d=devicePixelRatio;cx.clearRect(0,0,cv.width,cv.height);parts=parts.filter(p=>p.l>0&&p.y<innerHeight+30);
+  for(const p of parts){p.vy+=.28;p.vx*=.99;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;p.l--;cx.save();cx.translate(p.x*d,p.y*d);cx.rotate(p.r);cx.fillStyle=p.c;cx.fillRect(-p.w*d/2,-p.h*d/2,p.w*d,p.h*d);cx.restore()}
+  raf=parts.length?requestAnimationFrame(tick):0}
+</script>
+</body>
+</html>
